@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    {% if user.is_authenticated %}
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12" style="font-family: 'Roboto', sans-serif;">
+                    <div class="jumbotron custom-jumbo">
+                        <h1 class="text-primary display-4"> Spotify Song Recommender</h1>
+                        <h3 class="display-3 recommendations-greeting" style='font-size:70px;';>Hi {{ first_name }} ! &#128578; </h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="text">Choose a playlist you'd like to get recommendations from!</p>
+                                <p class="text">Simply click on a playlist to get a recommendation from its tracks that
+                                    you'll like the most</p>
+                                <p class="text">Here is a list of <span class="text-success font-weight-bold" style="font-family: 'Roboto', sans-serif; letter-spacing: 3px;">Spotify's featured playlists</span> right now in real time:</p>
+                                {% for pb in playlist_batches %}
+                                    <div class="container playlist-thumb-container">
+                                        <div class="row justify-content-md-around">
+                                            {% if pb.0.playlist_featured %}
+                                                <div class="col-lg-4">
+                                                    <div class="card playlist-thumb playlist-thumb-left">
+                                                        <a class="card"
+                                                           href="{% url "spotify_app:playlist_detail" pb.0.playlist_id %}">
+                                                            <img class="img-responsive"
+                                                                 src="{{ pb.0.playlist_img_src }}">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                            {% if pb.1.playlist_featured %}
+                                                <div class="col-lg-4">
+                                                    <div class="card playlist-thumb playlist-thumb-right">
+                                                        <a class="card"
+                                                           href="{% url "spotify_app:playlist_detail" pb.1.playlist_id %}">
+                                                            <img class="img-responsive"
+                                                                 src="{{ pb.1.playlist_img_src }}">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                            {% if pb.2.playlist_featured %}
+                                                <div class="col-lg-4">
+                                                    <div class="card playlist-thumb playlist-thumb-right">
+                                                        <a class="card"
+                                                           href="{% url "spotify_app:playlist_detail" pb.2.playlist_id %}">
+                                                            <img class="img-responsive"
+                                                                 src="{{ pb.2.playlist_img_src }}">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <div class="col-md-6">
+                                <p class="text">Or you can use a playlist of your own choosing!</p>
+                                <p class="text">Go to your Spotify, right click on the three dots, then share, and "Copy
+                                    Spotify URI"</p>
+                                <form method="post" class="text custom-playlist-form">
+                                    {% csrf_token %}
+                                    {{ form.as_p }}
+                                    <input type="submit" value="Take me to the Playlist!!"
+                                           class="btn btn-success btn custom-playlist-button">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="container-fluid">
+                <div class="col-lg-12 login-container">
+                    <div class="jumbotron">
+                        <h1 styles="font-weight-bold" class="login-rec display-4">Spotify Song Recommender</h1> 
+                        <p class="login-lead">Please log in to your Spotify account to get song recommendations.</p>
+                        <p class="lead">
+                            <a class="btn btn-success btn-lg" href="{% url "social:begin" "spotify" %}"
+                               role="button">Log in with Spotify</a>
+                        </p>
+                    </div>
+                </div>
+        </div>
+    {% endif %}
+{% endblock content %}
+
+

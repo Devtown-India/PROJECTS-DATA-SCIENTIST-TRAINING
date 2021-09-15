@@ -1,0 +1,13 @@
+hdbscan
+spotipy
+django
+funcy
+matplotlib
+numpy
+seaborn
+pandas
+django-picklefield
+scikit_learn
+social-auth-app-django
+gunicorn
+whitenoise

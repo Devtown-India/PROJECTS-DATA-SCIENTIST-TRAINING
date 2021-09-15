@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    <table>
+        {% for album in albums %}
+
+            <tr>
+            <td>{{ album.album_name }}</td>
+            </tr>
+
+        {% endfor %}
+    </table>
+
+
+{% endblock content %}

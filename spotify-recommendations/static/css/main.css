@@ -1,0 +1,332 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:100,600,400);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+
+.navbar-light {
+    box-shadow: -1px 3px 15px -4px rgba(0, 0, 0, 0.5);
+    background-color: #313131;
+}
+
+#homeButton {
+    text-align: left;
+    color: rgb(19, 204, 179) !important;
+}
+
+#collapsibleNavbar {
+    font-weight: 100;
+}
+
+.nav-text {
+    padding-top: .28rem;
+}
+
+.nav-item {
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+}
+
+#hamburger {
+    color: #ffffff !important;
+}
+
+.navbar-toggler-icon {
+    color: #ffffff;
+}
+
+.nav-link {
+    color: rgb(19, 204, 179) !important;
+}
+
+.nav-item {
+    text-align: right;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.myContent {
+    min-height: 84vh;
+    flex: 1 0 auto;
+}
+
+.text {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.45rem;
+}
+
+.footer {
+    box-shadow: -1px -5px 11px -5px rgba(0, 0, 0, 0.76);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #313131;
+    left: 0;
+    right: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 45px;
+    background-color: white;
+}
+
+.rec-row {
+    background-color: #945151 !important;
+    border: 0 !important;
+    border-radius: 20px;
+}
+
+.rec-button {
+    background-color: #313131 !important;
+    width: 50%;
+}
+
+.jumbotron {
+    background-color: transparent !important;
+}
+
+.text {
+    font-size: 1.3rem;
+}
+
+.button-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1vh;
+    background-color: transparent !important;
+    border: 0 !important;
+}
+
+.rec-song-button {
+    justify-content: space-around;
+    display: inline-block;
+    float: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    width: 20vw;
+    font-size: 1.25rem;
+    border-radius: 30px;
+    background-color: #313131;
+    border-color: #313131;
+}
+
+.rec-song-art {
+    justify-content: flex-start;
+    -webkit-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.6);
+    background-color: transparent !important;
+}
+
+.song-thumb-container {
+    background-color: transparent !important;
+}
+
+li {
+    list-style-type: none;
+}
+
+input {
+    width: 75%;
+    margin: auto;
+    position: relative;
+}
+
+.custom-playlist-button {
+    margin-top: 2vh;
+    width: 40%;
+    font-size: 1.4rem;
+    background-color: #313131;
+    border-color: #313131;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: transparent !important;
+    border: 0 !important;
+    border-radius: 40px;
+}
+
+.rec-list {
+    overflow-y: scroll;
+    margin-left: -10vh;
+    background-color: transparent !important;
+    border: 0 !important;
+}
+
+.recommendations-for-blank {
+    margin-bottom: 2vh;
+}
+
+.playlist-thumb-container {
+
+}
+
+.row-flex {
+
+}
+
+.playlist-thumb {
+    margin-bottom: 2vh;
+    -webkit-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.6);
+
+}
+
+.playlist-thumb-container a {
+    display: block;
+    float: left;
+}
+
+.playlist-thumb-container a {
+    justify-content: space-between;
+}
+
+.embedded-playlist {
+    border-radius: 30px;
+    -webkit-box-shadow: 2px 4px 12px 3px rgba(0, 0, 0, 0.56);
+    -moz-box-shadow: 2px 4px 12px 3px rgba(0, 0, 0, 0.56);
+    box-shadow: 2px 4px 12px 3px rgba(0, 0, 0, 0.56);
+    margin-top: 2vh;
+}
+
+.recommendation-text {
+    margin-left: -10vw;
+    margin-top: 2vh;
+    font-size: 1.2rem;
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 3vh;
+}
+
+.recommendations-title {
+    margin-top: -2vh;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+
+}
+
+.recommendations-greeting {
+    font-size: 8.0rem;
+     
+} 
+
+.rec-main-col {
+    max-height: 90vh;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.no-rec-header {
+    font-family: 'Raleway', sans-serif;
+}
+
+.fa-envelope {
+    font-size: 1.4rem;
+}
+
+#footerEmail {
+    padding-top: .25rem;
+}
+
+.footerContent {
+    padding-top: .75rem;
+    color: #ffffff;
+    font-weight: 100;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.0rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+*:before, *:after {
+    box-sizing: border-box;
+}
+
+.text-muted {
+    font-size: 1.2rem;
+}
+
+
+.globalContainer {
+    min-height: 100vh;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 100px;
+}
+
+#navLinkedInBtn {
+    color: rgb(19, 204, 179) !important;
+}
+
+#navGithubBtn {
+    color: rgb(19, 204, 179) !important;
+}
+
+.desktopDisclaimer {
+    display: none;
+}
+
+/* Phones */
+
+@media (max-width: 415px) {
+    .footer {
+        /* display: none; */
+    }
+
+    .globalContainer {
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    .desktopDisclaimer {
+        display: contents;
+        font-style: italic;
+        padding-top: 1vh;
+        font-size: .9rem;
+    }
+
+    /* landscape phones */
+    @media (min-width: 420px) and (max-width: 830px) {
+        .desktopDisclaimer {
+            display: contents;
+            font-style: italic;
+            padding-top: 1vh;
+            font-size: .9rem;
+        }
+    }
+}
+
+.roboto-container{
+    font-family: 'Roboto', sans-serif;
+}
+
+/* .container-fluid{
+    background-color: #313131;
+} */
+
+.btn-success{
+    background-color: rgb(94, 170, 214);
+}
+
+.login-rec{
+    font-weight: bold;
+    color: rebeccapurple;
+}
+
+.login-lead{
+    color:black;
+    font-size: 40px;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spotify Recommendation System</title>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+            integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+          integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static '/css/load-button.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <script src="{% static '/js/button-load.js' %}"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm navbar-light" role='navigation' id='navbar'>
+    <div class="container">
+        <a href="{% if user.is_authenticated %}{% url 'spotify_app:playlist_list' %} {% else %} {% url 'home' %} {% endif %}"
+           class="navbar-brand nav-link fas fa-home fa-2x" id='homeButton'><i></i></a>
+        <button class="navbar-toggler navbar-toggle" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavbar" id="hamburger"><i class="fas fa-bars hamburger"></i>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+            <ul class="navbar-nav ">
+                <li class='nav-item nav-text'>
+                </li>
+                <li class="nav-item nav-text">
+                </li>
+                <li class='nav-item nav-text' id=>
+                <li class='nav-item'>
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'logout' %}" class="header-link"><i
+                                class="nav-link fas fa-sign-out-alt fa-2x"></i></a>
+                    {% else %}
+                        <a href="{% url "social:begin" "spotify" %}"><i
+                                class="nav-link fas fa-sign-in-alt fa-2x"></i></a>
+                    {% endif %}
+                </li>
+                <li class='nav-item'><a href="https://github.com/ShapeAI">
+                    <i id="navGithubBtn" class="nav-link fab fa-github fa-2x"></i></a>
+                </li>
+                <li class='nav-item'><a href="https://www.linkedin.com/company/shapeai/">
+                    <i id="navLinkedInBtn" class=" nav-link fab fa-linkedin fa-2x"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</body>
+<div class="globalContainer container-fluid">
+    <section class="row myContent">
+        {% block content %}
+            <p></p>
+        {% endblock content %}
+    </section>
+</html>
